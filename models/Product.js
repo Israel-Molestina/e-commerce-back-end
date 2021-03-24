@@ -38,10 +38,12 @@ Product.init(
     category_id: {
       type: DataTypes.INTEGER,
       references: {
+        onDelete: 'SET NULL',
         model: 'category',
         key: 'id',
         unique: false
-      }
+      },
+      allowNull: true
     }
   },
   {
